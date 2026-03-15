@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import ProductCatalog from '@/components/ProductCatalog';
-import BoxBuilder from '@/components/BoxBuilder';
-import { Cookie, Truck, Heart, Star } from 'lucide-react';
+import ProductCatalog from "@/components/ProductCatalog";
+import BoxBuilder from "@/components/BoxBuilder";
+import { Cookie, Truck, Heart, Star } from "lucide-react";
 
 export default function Home() {
   return (
@@ -27,20 +27,30 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
             </span>
-            <span className="text-pink-700 font-bold text-sm tracking-wide uppercase">Edmonton Only</span>
+            <span className="text-pink-700 font-bold text-sm tracking-wide uppercase">
+              Edmonton Only
+            </span>
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-pink-900 mb-6 leading-tight">
-            A cookie a month,<br />
+            A cookie a month,
+            <br />
             <span className="text-pink-600">keeps the cravings at bay</span>
           </h1>
           <p className="text-xl text-pink-700/80 max-w-2xl mx-auto mb-10 font-medium">
-            Hand-crafted, artisanal treats delivered fresh to your doorstep. Choose your box size and fill it with your favorite sweets.
+            Hand-crafted, artisanal treats delivered fresh to your doorstep.
+            Choose your box size and fill it with your favorite sweets.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#build" className="bg-pink-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-pink-700 transition-all shadow-xl shadow-pink-200">
+            <a
+              href="#build"
+              className="bg-pink-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-pink-700 transition-all shadow-xl shadow-pink-200"
+            >
               Start Your Box
             </a>
-            <a href="#catalog" className="bg-white text-pink-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-pink-50 transition-all border border-pink-200">
+            <a
+              href="#catalog"
+              className="bg-white text-pink-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-pink-50 transition-all border border-pink-200"
+            >
               View Treats
             </a>
           </div>
@@ -56,35 +66,51 @@ export default function Home() {
                 <Truck size={32} />
               </div>
               <h3 className="text-xl font-bold mb-2">Local Delivery</h3>
-              <p className="text-gray-500">Exclusively serving the Edmonton area with fresh, local delivery.</p>
+              <p className="text-gray-500">
+                Exclusively serving the Edmonton area with fresh, local
+                delivery.
+              </p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mb-4">
                 <Heart size={32} />
               </div>
               <h3 className="text-xl font-bold mb-2">Baked with Love</h3>
-              <p className="text-gray-500">Every cookie and cupcake is hand-crafted using premium ingredients.</p>
+              <p className="text-gray-500">
+                Every cookie and cupcake is hand-crafted using premium
+                ingredients.
+              </p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mb-4">
                 <Star size={32} />
               </div>
               <h3 className="text-xl font-bold mb-2">Flexible Subs</h3>
-              <p className="text-gray-500">Change your items or pause your subscription anytime in settings.</p>
+              <p className="text-gray-500">
+                Change your items or pause your subscription anytime in
+                settings.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main App Section */}
-      <section id="build" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="build"
+        className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <div id="catalog" className="mb-8 flex items-center justify-between">
-              <h2 className="text-3xl font-bold text-gray-900">Choose Your Treats</h2>
+            <div
+              id="catalog"
+              className="mb-8 flex items-center justify-between"
+            >
+              <h2 className="text-3xl font-bold text-gray-900">
+                Choose Your Treats
+              </h2>
               <div className="text-pink-600 font-semibold flex items-center gap-2">
-                <Cookie size={20} />
-                5 Artisanal Options
+                <Cookie size={20} />5 Artisanal Options
               </div>
             </div>
             <ProductCatalog />
@@ -103,7 +129,10 @@ export default function Home() {
           <div className="text-2xl font-black mb-4 tracking-tight">
             COOKIE<span className="text-pink-400">AMONTH</span>
           </div>
-          <p className="opacity-60 text-sm">© 2024 Cookie a Month. All rights reserved. Edmonton, AB.</p>
+          <p className="opacity-60 text-sm">
+            © {new Date().getFullYear()} Cookie a Month. All rights reserved.
+            Edmonton, AB.
+          </p>
         </div>
       </footer>
     </main>
