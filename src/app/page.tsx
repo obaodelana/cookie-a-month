@@ -58,21 +58,10 @@ export default function Home() {
               <div className="absolute -inset-4 bg-pink-200/50 rounded-[40px] blur-2xl transform rotate-3"></div>
               <div className="relative bg-white p-4 rounded-[40px] shadow-2xl border border-pink-100 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img
-                  src="/images/mm-cookie.png"
+                  src="/images/cover-image.png"
                   alt="Delicious Cookies"
-                  className="rounded-[32px] w-full h-[400px] object-cover"
+                  className="rounded-4xl w-full h-150 object-cover"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-pink-50 animate-bounce">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600">
-                      <Star fill="currentColor" size={24} />
-                    </div>
-                    <div>
-                      <div className="font-black text-pink-900 leading-none">4.9/5</div>
-                      <div className="text-xs text-pink-600 font-bold uppercase tracking-wider">Rating</div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -87,27 +76,36 @@ export default function Home() {
               <div className="w-20 h-20 bg-pink-50 rounded-3xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 group-hover:bg-pink-600 group-hover:text-white transition-all duration-300">
                 <Truck size={36} />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-pink-900">Local Delivery</h3>
+              <h3 className="text-2xl font-bold mb-3 text-pink-900">
+                Local Delivery
+              </h3>
               <p className="text-pink-700/60 font-medium">
-                Exclusively serving the Edmonton area with fresh, local delivery every week.
+                Exclusively serving the Edmonton area with fresh, local delivery
+                every week.
               </p>
             </div>
             <div className="flex flex-col items-center group">
               <div className="w-20 h-20 bg-pink-50 rounded-3xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 group-hover:bg-pink-600 group-hover:text-white transition-all duration-300">
                 <Heart size={36} />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-pink-900">Baked with Love</h3>
+              <h3 className="text-2xl font-bold mb-3 text-pink-900">
+                Baked with Love
+              </h3>
               <p className="text-pink-700/60 font-medium">
-                Every cookie and cupcake is hand-crafted using premium ingredients.
+                Every cookie and cupcake is hand-crafted using premium
+                ingredients.
               </p>
             </div>
             <div className="flex flex-col items-center group">
               <div className="w-20 h-20 bg-pink-50 rounded-3xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 group-hover:bg-pink-600 group-hover:text-white transition-all duration-300">
                 <Star size={36} />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-pink-900">Flexible Subs</h3>
+              <h3 className="text-2xl font-bold mb-3 text-pink-900">
+                Flexible Subs
+              </h3>
               <p className="text-pink-700/60 font-medium">
-                Change your items or pause your subscription anytime in your dashboard.
+                Change your items or pause your subscription anytime in your
+                dashboard.
               </p>
             </div>
           </div>
@@ -117,7 +115,9 @@ export default function Home() {
       {/* Featured Products Section */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-pink-900 mb-4">Popular This Month</h2>
+          <h2 className="text-4xl font-black text-pink-900 mb-4">
+            Popular This Month
+          </h2>
           <p className="text-lg text-pink-700/70 font-medium max-w-2xl mx-auto">
             Our most loved treats that our subscribers can't get enough of.
           </p>
@@ -143,9 +143,15 @@ export default function Home() {
             COOKIE<span className="text-pink-400">AMONTH</span>
           </div>
           <div className="flex justify-center gap-8 mb-10 opacity-60 font-bold uppercase tracking-widest text-xs">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <Link href="/treats" className="hover:text-white">Treats</Link>
-            <Link href="/profile" className="hover:text-white">Profile</Link>
+            <Link href="/" className="hover:text-white">
+              Home
+            </Link>
+            <Link href="/treats" className="hover:text-white">
+              Treats
+            </Link>
+            <Link href="/profile" className="hover:text-white">
+              Profile
+            </Link>
           </div>
           <p className="opacity-40 text-sm">
             © {new Date().getFullYear()} Cookie a Month. All rights reserved.
