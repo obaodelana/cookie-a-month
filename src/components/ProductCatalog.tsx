@@ -1,26 +1,31 @@
-'use client';
+"use client";
 
-import { PRODUCTS } from '@/lib/products';
-import { useBox } from '@/context/BoxContext';
-import { Plus, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { PRODUCTS } from "@/lib/products";
+import { useBox } from "@/context/BoxContext";
+import { Plus } from "lucide-react";
 
 interface ProductCatalogProps {
-  viewMode?: 'full' | 'featured';
+  viewMode?: "full" | "featured";
 }
 
-export default function ProductCatalog({ viewMode = 'full' }: ProductCatalogProps) {
+export default function ProductCatalog({
+  viewMode = "full",
+}: ProductCatalogProps) {
   const { addItem, totalItems, maxItems } = useBox();
 
-  const productsToDisplay = viewMode === 'featured' ? PRODUCTS.slice(0, 3) : PRODUCTS;
+  const productsToDisplay =
+    viewMode === "featured" ? PRODUCTS.slice(0, 3) : PRODUCTS;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {productsToDisplay.map((product) => (
-        <div key={product.id} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-pink-50 flex flex-col">
+        <div
+          key={product.id}
+          className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-pink-50 flex flex-col"
+        >
           <div className="h-48 bg-pink-100 flex items-center justify-center relative overflow-hidden">
-             {/* eslint-disable-next-line @next/next/no-img-element */}
-             <img
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={product.image}
               alt={product.name}
               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
@@ -32,10 +37,14 @@ export default function ProductCatalog({ viewMode = 'full' }: ProductCatalogProp
             </div>
           </div>
           <div className="p-5 flex flex-col flex-1">
-            <h3 className="text-lg font-bold text-gray-800 mb-1">{product.name}</h3>
-            <p className="text-sm text-gray-500 mb-4 line-clamp-2 flex-1">{product.description}</p>
+            <h3 className="text-lg font-bold text-gray-800 mb-1">
+              {product.name}
+            </h3>
+            <p className="text-sm text-gray-500 mb-4 line-clamp-2 flex-1">
+              {product.description}
+            </p>
 
-            {viewMode === 'full' ? (
+            {viewMode === "full" && (
               <button
                 onClick={() => addItem(product.id)}
                 disabled={totalItems >= maxItems}
@@ -44,14 +53,6 @@ export default function ProductCatalog({ viewMode = 'full' }: ProductCatalogProp
                 <Plus size={18} />
                 Add to Box
               </button>
-            ) : (
-              <Link
-                href="/treats"
-                className="w-full flex items-center justify-center gap-2 bg-pink-50 text-pink-600 py-2 rounded-xl font-semibold hover:bg-pink-100 transition-all"
-              >
-                View Details
-                <ArrowRight size={16} />
-              </Link>
             )}
           </div>
         </div>
