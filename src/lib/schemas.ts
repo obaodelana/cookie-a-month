@@ -28,7 +28,7 @@ export type BoxItemValues = z.infer<typeof boxItemSchema>;
 export type SubscriptionTier = z.infer<typeof subscriptionTierSchema>;
 
 export const TIER_CONFIG = {
-  basic: { name: "Basic Box", price: 20, maxItems: 5 },
-  premium: { name: "Premium Box", price: 50, maxItems: 10 },
-  ultimate: { name: "Ultimate Box", price: 100, maxItems: 25 },
+  basic: { name: "Basic Box", price: 10, maxItems: 5 },
+  premium: { name: "Premium Box", price: 30, maxItems: 10 },
+  ultimate: { name: "Ultimate Box", price: 50, maxItems: 25 },
 };
