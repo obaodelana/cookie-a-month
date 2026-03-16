@@ -19,14 +19,14 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Fresh Batch Box | Handcrafted Edmonton Cookie Subscription",
+  title: "Edmonton Cookie Club | Handcrafted Edmonton Cookie Subscription",
   description: "Handcrafted cookies & cupcakes baked fresh in Edmonton — delivered monthly to your door. Build your perfect box and support local YEG bakery.",
   openGraph: {
-    title: "Fresh Batch Box | Edmonton's Fresh-Treat Subscription",
+    title: "Edmonton Cookie Club | Edmonton's Fresh-Treat Subscription",
     description: "Monthly delivery of handcrafted cookies and cupcakes in Edmonton. Build your box today!",
     type: "website",
     locale: "en_CA",
-    siteName: "Fresh Batch Box",
+    siteName: "Edmonton Cookie Club",
   }
 };
 

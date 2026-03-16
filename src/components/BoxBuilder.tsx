@@ -247,7 +247,7 @@ export default function BoxBuilder() {
                         </div>
                         <h2 className="text-4xl font-black text-deep-chocolate mb-4">You&apos;re Subscribed!</h2>
                         <p className="text-lg text-deep-chocolate/60 font-medium leading-relaxed">
-                            Welcome to the Fresh Batch family! You&apos;ll receive a confirmation email shortly.
+                            Welcome to the Edmonton Cookie Club family! You&apos;ll receive a confirmation email shortly.
                             Your first box of treats will be delivered soon.
                         </p>
                     </div>

@@ -41,7 +41,7 @@ export default function Navbar() {
               <Cookie className="text-deep-chocolate" size={24} />
             </div>
             <span className="text-xl font-black text-deep-chocolate tracking-tight">
-              Fresh Batch Box
+              Edmonton Cookie Club
             </span>
           </Link>
 

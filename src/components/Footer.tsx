@@ -12,7 +12,7 @@ export default function Footer() {
                 <Cookie className="text-deep-chocolate" size={24} />
               </div>
               <span className="text-2xl font-black tracking-tight">
-                Fresh Batch Box
+                Edmonton Cookie Club
               </span>
             </Link>
             <p className="text-warm-beige/70 max-w-md mb-6 font-medium leading-relaxed">
@@ -23,7 +23,7 @@ export default function Footer() {
               <a href="#" className="bg-warm-beige/10 p-3 rounded-full hover:bg-brand-pink hover:text-deep-chocolate transition-all">
                 <Instagram size={20} />
               </a>
-              <a href="mailto:hello@freshbatchbox.ca" className="bg-warm-beige/10 p-3 rounded-full hover:bg-brand-pink hover:text-deep-chocolate transition-all">
+              <a href="mailto:hello@edmontoncookieclub.ca" className="bg-warm-beige/10 p-3 rounded-full hover:bg-brand-pink hover:text-deep-chocolate transition-all">
                 <Mail size={20} />
               </a>
             </div>
@@ -53,7 +53,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-warm-beige/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-warm-beige/40 text-sm font-bold">
-            © {new Date().getFullYear()} Fresh Batch Box. Edmonton, AB.
+            © {new Date().getFullYear()} Edmonton Cookie Club. Edmonton, AB.
           </p>
           <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-warm-beige/30">
             <Link href="#" className="hover:text-warm-beige transition-colors">Privacy Policy</Link>

@@ -24,13 +24,13 @@ export default function AboutPage() {
                 From Our Edmonton Kitchen <span className="text-brand-pink">to Your Door.</span>
               </h1>
               <p className="text-xl text-deep-chocolate/70 font-medium leading-relaxed mb-8">
-                Hi, I&apos;m the owner of Fresh Batch Box. Baking has always been a way to bring
+                Hi, I&apos;m the owner of Edmonton Cookie Club. Baking has always been a way to bring
                 joy to my friends and family right here in Edmonton. I wanted to create
                 something that brings that same fresh-baked warmth to everyone in our city,
                 every single month.
               </p>
               <p className="text-lg text-deep-chocolate/60 font-medium leading-relaxed mb-12">
-                Fresh Batch Box isn&apos;t just about cookies; it&apos;s about the excitement of
+                Edmonton Cookie Club isn&apos;t just about cookies; it&apos;s about the excitement of
                 knowing that something delicious, handcrafted, and local is arriving at your
                 door. We don&apos;t use couriers who might toss your treats around. We handle
                 delivery ourselves because we care about every single box.
@@ -63,7 +63,7 @@ export default function AboutPage() {
              <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 className="text-4xl md:text-5xl font-black mb-8">The Fresh Batch Promise</h2>
+                    <h2 className="text-4xl md:text-5xl font-black mb-8">The Edmonton Cookie Club Promise</h2>
                     <ul className="space-y-6">
                         {[
                             { title: "Baked Fresh", desc: "We never freeze our dough. Everything is mixed, scooped, and baked hours before delivery." },

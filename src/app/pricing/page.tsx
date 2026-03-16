@@ -165,7 +165,7 @@ export default function PricingPage() {
             <div className="text-center mb-16">
                 <HelpCircle size={48} className="mx-auto text-brand-pink mb-6" />
                 <h3 className="text-4xl font-black text-deep-chocolate mb-4">Frequently Asked Questions</h3>
-                <p className="text-deep-chocolate/60 font-medium">Everything you need to know about Fresh Batch Box.</p>
+                <p className="text-deep-chocolate/60 font-medium">Everything you need to know about Edmonton Cookie Club.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
