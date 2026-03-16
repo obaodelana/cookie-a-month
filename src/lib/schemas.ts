@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 // Edmonton postal code regex: Starts with T5 or T6 followed by a digit and a letter, etc.
-// Simplified for now to check the start: T5 or T6
 const edmontonPostalCodeRegex = /^[T][5-6][A-Z][0-9][A-Z][0-9]$/i;
 
 export const profileSchema = z.object({
@@ -17,18 +16,42 @@ export const profileSchema = z.object({
 });
 
 export const boxItemSchema = z.object({
-  productId: z.string().uuid(),
-  quantity: z.number().int().min(1).max(25),
+  productId: z.string(),
+  quantity: z.number().int().min(1).max(48),
 });
 
-export const subscriptionTierSchema = z.enum(["basic", "premium", "ultimate"]);
+export const subscriptionTierSchema = z.enum(["dozen", "family", "big"]);
 
 export type ProfileFormValues = z.infer<typeof profileSchema>;
 export type BoxItemValues = z.infer<typeof boxItemSchema>;
 export type SubscriptionTier = z.infer<typeof subscriptionTierSchema>;
 
-export const TIER_CONFIG = {
-  basic: { name: "Basic Box", price: 10, maxItems: 5 },
-  premium: { name: "Premium Box", price: 30, maxItems: 10 },
-  ultimate: { name: "Ultimate Box", price: 50, maxItems: 25 },
+export interface TierDetail {
+    name: string;
+    price: number;
+    maxItems: number;
+    description: string;
+    popular?: boolean;
+}
+
+export const TIER_CONFIG: Record<SubscriptionTier, TierDetail> = {
+  dozen: {
+    name: "Dozen Delight",
+    price: 29,
+    maxItems: 12,
+    description: "Perfect for a single treat-lover."
+  },
+  family: {
+    name: "Family Share",
+    price: 55,
+    maxItems: 24,
+    description: "Our most popular choice for families.",
+    popular: true
+  },
+  big: {
+    name: "Big Batch",
+    price: 99,
+    maxItems: 48,
+    description: "For the ultimate party or office stash."
+  },
 };
