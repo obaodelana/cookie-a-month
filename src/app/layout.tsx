@@ -19,8 +19,15 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Cookie a Month | Sweetness Delivered",
-  description: "A cookie a month, keeps the cravings at bay. Sweetness delivered to your doorstep in Edmonton.",
+  title: "Edmonton Cookie Club | Handcrafted Edmonton Cookie Subscription",
+  description: "Handcrafted cookies & cupcakes baked fresh in Edmonton — delivered monthly to your door. Build your perfect box and support local YEG bakery.",
+  openGraph: {
+    title: "Edmonton Cookie Club | Edmonton's Fresh-Treat Subscription",
+    description: "Monthly delivery of handcrafted cookies and cupcakes in Edmonton. Build your box today!",
+    type: "website",
+    locale: "en_CA",
+    siteName: "Edmonton Cookie Club",
+  }
 };
 
 export default function RootLayout({
@@ -29,9 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} font-quicksand antialiased bg-[#fffafb] text-slate-900`}
+        className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} font-sans antialiased bg-warm-beige text-deep-chocolate`}
       >
         <BoxProvider>
           {children}

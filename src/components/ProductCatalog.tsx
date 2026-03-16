@@ -2,7 +2,7 @@
 
 import { PRODUCTS } from "@/lib/products";
 import { useBox } from "@/context/BoxContext";
-import { Plus } from "lucide-react";
+import { Plus, Check } from "lucide-react";
 
 interface ProductCatalogProps {
   viewMode?: "full" | "featured";
@@ -11,36 +11,47 @@ interface ProductCatalogProps {
 export default function ProductCatalog({
   viewMode = "full",
 }: ProductCatalogProps) {
-  const { addItem, totalItems, maxItems } = useBox();
+  const { addItem, items, totalItems, maxItems } = useBox();
 
   const productsToDisplay =
-    viewMode === "featured" ? PRODUCTS.slice(0, 3) : PRODUCTS;
+    viewMode === "featured" ? PRODUCTS.slice(0, 4) : PRODUCTS;
+
+  const getItemQuantity = (id: string) => {
+    return items.find((i) => i.productId === id)?.quantity || 0;
+  };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className={`grid grid-cols-1 ${viewMode === 'featured' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'} gap-6`}>
       {productsToDisplay.map((product) => (
         <div
           key={product.id}
-          className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-pink-50 flex flex-col"
+          className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-pink/20 flex flex-col"
         >
-          <div className="h-48 bg-pink-100 flex items-center justify-center relative overflow-hidden">
+          <div className="h-64 bg-brand-beige flex items-center justify-center relative overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={product.image}
               alt={product.name}
-              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute top-3 right-3">
-              <span className="bg-white/90 backdrop-blur-sm text-pink-600 text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+            <div className="absolute top-4 right-4">
+              <span className="bg-white/90 backdrop-blur-sm text-deep-chocolate text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
                 {product.category}
               </span>
             </div>
+            {getItemQuantity(product.id) > 0 && (
+               <div className="absolute top-4 left-4">
+               <span className="bg-brand-pink text-deep-chocolate text-xs font-black h-8 w-8 flex items-center justify-center rounded-full shadow-lg border-2 border-white">
+                 {getItemQuantity(product.id)}
+               </span>
+             </div>
+            )}
           </div>
-          <div className="p-5 flex flex-col flex-1">
-            <h3 className="text-lg font-bold text-gray-800 mb-1">
+          <div className="p-6 flex flex-col flex-1">
+            <h3 className="text-xl font-bold text-deep-chocolate mb-2">
               {product.name}
             </h3>
-            <p className="text-sm text-gray-500 mb-4 line-clamp-2 flex-1">
+            <p className="text-sm text-deep-chocolate/60 mb-6 font-medium leading-relaxed flex-1">
               {product.description}
             </p>
 
@@ -48,11 +59,25 @@ export default function ProductCatalog({
               <button
                 onClick={() => addItem(product.id)}
                 disabled={totalItems >= maxItems}
-                className="w-full flex items-center justify-center gap-2 bg-pink-50 text-pink-600 py-2 rounded-xl font-semibold hover:bg-pink-500 hover:text-white transition-all disabled:opacity-50 disabled:hover:bg-pink-50 disabled:hover:text-pink-600"
+                className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl font-black text-sm transition-all shadow-sm ${
+                  totalItems >= maxItems
+                  ? "bg-brand-beige text-deep-chocolate/30 cursor-not-allowed"
+                  : "bg-brand-pink text-deep-chocolate hover:bg-deep-chocolate hover:text-white"
+                }`}
               >
-                <Plus size={18} />
-                Add to Box
+                {totalItems >= maxItems && getItemQuantity(product.id) === 0 ? (
+                    "Box Full"
+                ) : (
+                    <>
+                        <Plus size={18} />
+                        Add to Box
+                    </>
+                )}
               </button>
+            )}
+
+            {viewMode === "featured" && (
+                <div className="h-1.5 w-12 bg-brand-pink rounded-full"></div>
             )}
           </div>
         </div>
